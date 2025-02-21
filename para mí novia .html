@@ -1,170 +1,127 @@
-<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>My Love ❤️</title>
-  <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Universo para mi amor</title>
   <style>
     body {
-      background: linear-gradient(to right, dodgerblue 0%, deepskyblue 100%);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
       margin: 0;
-      flex-direction: column;
-      text-align: center;
-      color: white;
-    }
-
-    .flower-container {
+      overflow: hidden;
+      background: radial-gradient(circle, #0d0d26, #000);
+      height: 100vh;
       display: flex;
-      flex-direction: column;
       align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      position: relative;
     }
-
-    .flower {
-      width: 150px;
-      height: 150px;
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Sunflower_from_Silesia2.jpg/800px-Sunflower_from_Silesia2.jpg'); /* URL de la imagen del girasol */
-      background-size: cover;
+    .mensaje {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Dancing Script', cursive;
+      font-size: 2em;
+      color: white;
+      text-align: center;
+    }
+    .estrella {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
       border-radius: 50%;
-      margin-bottom: 20px;
+      opacity: 0.8;
     }
-
-    .heart {
-      font-size: 70px;
-      color: yellow; /* Corazón amarillo */
-      margin-bottom: 20px;
+    .cometa {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 0 15px white;
+      animation: comet-move 2s linear infinite;
     }
-
-    .text {
+    .cometa::before {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 6px;
+      background: linear-gradient(to right, white, transparent);
+      top: 50%;
+      left: -50px;
+      transform: translateY(-50%);
+    }
+    @keyframes comet-move {
+      from { transform: translateX(0); opacity: 1; }
+      to { transform: translateX(120vw); opacity: 0; }
+    }
+    .planet-container {
+      position: absolute;
+      bottom: 10%;
+      right: 10%;
+      width: 180px;
+      height: 180px;
+    }
+    .far-planet-container {
+      position: absolute;
+      top: 10%;
+      left: 10%;
+      width: 120px;
+      height: 120px;
+      opacity: 0.8;
+    }
+    .satellite {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: transparent;
       font-size: 24px;
-      margin-top: 20px;
-      font-family: 'Indie Flower', cursive;
+      animation: orbit 5s linear infinite;
+      transform-origin: 50px 50px;
     }
-
-    .download-section {
-      margin-top: 20px;
-    }
-
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #ff9800;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    button:hover {
-      background-color: #ff5722;
+    @keyframes orbit {
+      0% { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+      100% { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
     }
   </style>
 </head>
 <body>
-
-  <div class="flower-container">
-    <!-- Flor de girasol -->
-    <div class="flower"></div>
-
-    <!-- Corazón amarillo -->
-    <div class="heart">❤️</div>
-
-    <div class="text">
-      ¿Quieres ser mi San Valentín? 🌻❤️
-    </div>
-
-    <div class="download-section">
-      <!-- Enlace para descargar la carta -->
-      <a href="./Canva/Carta.pdf" download="Carta.pdf">
-        <button>Carta 📩</button>
-      </a>
-    </div>
+  <div class="mensaje">Eres el amor de mi vida, siempre 💛</div>
+  <script>
+    function crearEstrellas() {
+      for (let i = 0; i < 100; i++) {
+        let estrella = document.createElement('div');
+        estrella.classList.add('estrella');
+        estrella.style.top = Math.random() * 100 + 'vh';
+        estrella.style.left = Math.random() * 100 + 'vw';
+        document.body.appendChild(estrella);
+      }
+    }
+    function crearCometa() {
+      let cometa = document.createElement('div');
+      cometa.classList.add('cometa');
+      cometa.style.top = (Math.random() * 80 + 10) + 'vh';
+      cometa.style.left = '-10vw';
+      document.body.appendChild(cometa);
+      setTimeout(() => { cometa.remove(); }, 2000);
+    }
+    crearEstrellas();
+    setInterval(crearCometa, 2500);
+  </script>
+  <div class="planet-container">
+    <svg class="planeta" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="50" fill="blue" />
+      <path d="M30,40 C20,35 35,20 50,25 C65,30 70,45 55,50 C40,55 25,50 30,40 Z" fill="green" />
+      <path d="M60,60 C55,50 75,35 80,45 C85,55 70,70 60,60 Z" fill="green" />
+    </svg>
+    <div class="satellite">🛰️</div>
   </div>
-
+  <div class="far-planet-container">
+    <svg class="planeta" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="50" fill="#d27d2c" />
+      <ellipse cx="50" cy="50" rx="40" ry="10" fill="#a0522d" opacity="0.9" />
+    </svg>
+  </div>
 </body>
-</html><style>/* Fondo de la página con gradiente */
-body {
-  background: linear-gradient(to right, dodgerblue 0%, deepskyblue 100%);
-  font-family: 'Indie Flower', cursive;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  text-align: center;
-  flex-direction: column;
-  color: white;
-}
-
-/* Contenedor para alinear los elementos */
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Estilo para la flor de girasol */
-.flower {
-  width: 150px;
-  height: 150px;
-  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Sunflower_from_Silesia2.jpg/800px-Sunflower_from_Silesia2.jpg');
-  background-size: cover;
-  background-position: center;
-  border-radius: 50%;
-  margin-bottom: 20px;
-}
-
-/* Estilo para el corazón amarillo */
-.heart {
-  font-size: 70px;
-  color: yellow;
-  margin-bottom: 20px;
-  animation: pulse 1s infinite;
-}
-
-/* Estilo para el mensaje */
-.text p {
-  font-size: 24px;
-  margin: 10px 0;
-}
-
-/* Estilos para el botón de la carta */
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #ff9800;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #ff5722;
-}
-
-/* Animación para el corazón */
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}</style><script>// Enlazamos un pequeño efecto de interacción al corazón cuando se hace clic
-const heart = document.querySelector('.heart');
-
-heart.addEventListener('click', () => {
-  heart.style.transform = 'scale(1.2)';
-  setTimeout(() => {
-    heart.style.transform = 'scale(1)';
-  }, 200); // Vuelve a su tamaño original después de 200ms
-});</script>
+</html>
