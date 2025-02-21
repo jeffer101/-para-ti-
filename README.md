@@ -1,1 +1,170 @@
-# Valentin
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Love ❤️</title>
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background: linear-gradient(to right, dodgerblue 0%, deepskyblue 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      flex-direction: column;
+      text-align: center;
+      color: white;
+    }
+
+    .flower-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .flower {
+      width: 150px;
+      height: 150px;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Sunflower_from_Silesia2.jpg/800px-Sunflower_from_Silesia2.jpg'); /* URL de la imagen del girasol */
+      background-size: cover;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+
+    .heart {
+      font-size: 70px;
+      color: yellow; /* Corazón amarillo */
+      margin-bottom: 20px;
+    }
+
+    .text {
+      font-size: 24px;
+      margin-top: 20px;
+      font-family: 'Indie Flower', cursive;
+    }
+
+    .download-section {
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #ff9800;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff5722;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="flower-container">
+    <!-- Flor de girasol -->
+    <div class="flower"></div>
+
+    <!-- Corazón amarillo -->
+    <div class="heart">❤️</div>
+
+    <div class="text">
+      ¿Quieres ser mi San Valentín? 🌻❤️
+    </div>
+
+    <div class="download-section">
+      <!-- Enlace para descargar la carta -->
+      <a href="./Canva/Carta.pdf" download="Carta.pdf">
+        <button>Carta 📩</button>
+      </a>
+    </div>
+  </div>
+
+</body>
+</html><style>/* Fondo de la página con gradiente */
+body {
+  background: linear-gradient(to right, dodgerblue 0%, deepskyblue 100%);
+  font-family: 'Indie Flower', cursive;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  flex-direction: column;
+  color: white;
+}
+
+/* Contenedor para alinear los elementos */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilo para la flor de girasol */
+.flower {
+  width: 150px;
+  height: 150px;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Sunflower_from_Silesia2.jpg/800px-Sunflower_from_Silesia2.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+/* Estilo para el corazón amarillo */
+.heart {
+  font-size: 70px;
+  color: yellow;
+  margin-bottom: 20px;
+  animation: pulse 1s infinite;
+}
+
+/* Estilo para el mensaje */
+.text p {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+/* Estilos para el botón de la carta */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ff9800;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff5722;
+}
+
+/* Animación para el corazón */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}</style><script>// Enlazamos un pequeño efecto de interacción al corazón cuando se hace clic
+const heart = document.querySelector('.heart');
+
+heart.addEventListener('click', () => {
+  heart.style.transform = 'scale(1.2)';
+  setTimeout(() => {
+    heart.style.transform = 'scale(1)';
+  }, 200); // Vuelve a su tamaño original después de 200ms
+});</script>
